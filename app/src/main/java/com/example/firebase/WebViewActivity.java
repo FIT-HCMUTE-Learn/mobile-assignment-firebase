@@ -1,7 +1,6 @@
-package com.example.firebase.ui;
+package com.example.firebase;
 
 import android.os.Bundle;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,12 +15,8 @@ public class WebViewActivity extends AppCompatActivity {
         binding = ActivityWebviewBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        WebSettings webSettings = binding.webview.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        webSettings.setLoadWithOverviewMode(true);
-        webSettings.setUseWideViewPort(true);
-
-        binding.webview.setWebViewClient(new WebViewClient());
-        binding.webview.loadUrl("https://yourresponsivewebsite.com");
+        binding.webview.getSettings().setJavaScriptEnabled(true);
+        binding.webview.setWebViewClient(new WebViewClient());  // per WebViewClient.pdf :contentReference[oaicite:8]{index=8}&#8203;:contentReference[oaicite:9]{index=9}
+        binding.webview.loadUrl("https://your-responsive-site.example.com");
     }
 }

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="0dp">
+
+        <!-- Video placeholder -->
+        <FrameLayout
+            android:id="@+id/videoContainer"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Top-right avatar -->
+        <ImageView
+            android:id="@+id/ivUserAvatar"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_avatar_placeholder"
+            app:layout_constraintTop_toTopOf="@id/videoContainer"
+            app:layout_constraintEnd_toEndOf="@id/videoContainer"
+            android:layout_margin="8dp"/>
+
+        <!-- Bottom-left poster info -->
+        <LinearLayout
+            android:id="@+id/llPosterInfo"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/videoContainer"
+            app:layout_constraintStart_toStartOf="@id/videoContainer"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/ivPosterAvatar"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_avatar_placeholder"/>
+
+            <TextView
+                android:id="@+id/tvPosterEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:textColor="@android:color/white"
+                android:text="user@example.com"/>
+        </LinearLayout>
+
+        <!-- Right-side actions -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/videoContainer"
+            app:layout_constraintEnd_toEndOf="@id/videoContainer"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/ivLike"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_like"/>
+            <TextView
+                android:id="@+id/tvLikeCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textColor="@android:color/white"
+                android:text="0"/>
+
+            <ImageView
+                android:id="@+id/ivDislike"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_dislike"
+                android:layout_marginTop="12dp"/>
+            <TextView
+                android:id="@+id/tvDislikeCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textColor="@android:color/white"
+                android:text="0"/>
+
+            <ImageView
+                android:id="@+id/ivShare"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_share"
+                android:layout_marginTop="12dp"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
